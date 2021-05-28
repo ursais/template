@@ -1,8 +1,18 @@
-# Install dependencies
+# Installation
 
-* apt install certbot nginx python3-certbot-nginx ufw
+## Table of Contents
+* [Dependencies](#Dependencies)
+* [UFW](#UFW)
+* [Nginx](#Nginx)
+* [Systemd](#Systemd)
 
-# UFW
+## Dependencies
+
+```shell
+apt install certbot nginx python3-certbot-nginx ufw
+```
+
+## UFW
 
 Run
 
@@ -13,7 +23,7 @@ ufw allow https
 ufw enable
 ```
 
-# Nginx
+## Nginx
 
 * Create a Nginx config file in /etc/nginx/sites-available/template.example.com:
 
@@ -39,4 +49,38 @@ cd /etc/nginx/sites-enabled
 ln -s ../sites-available/template.example.com .
 nginx -t
 certbot 
+```
+
+## Systemd
+
+Create `/etc/systemd/system/template.service` with:
+
+```unit file (systemd)
+[Unit]
+Description=Template container starter
+After=docker.service network-online.target
+Requires=docker.service network-online.target
+
+[Service]
+WorkingDirectory=/opt/template
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStartPre=-/usr/local/bin/docker-compose pull --quiet
+ExecStart=/usr/local/bin/docker-compose -f docker-compose.yml up -d
+
+ExecStop=/usr/local/bin/docker-compose -f docker-compose.yml down
+
+ExecReload=/usr/local/bin/docker-compose pull --quiet
+ExecReload=/usr/local/bin/docker-compose -f docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+```
+
+and run:
+```shell
+systemctl daemon-reload
+systemctl enable template
+service template start
 ```
