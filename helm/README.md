@@ -1,18 +1,9 @@
-# Deployment
+# Operations
 
 ## Table of Contents
-* [Dependencies](#Dependencies)
 * [UFW](#UFW)
 * [Nginx](#Nginx)
 * [Systemd](#Systemd)
-
-## Dependencies
-
-```shell
-apt install certbot git nginx python3-certbot-nginx ufw
-cd /opt
-git clone https://github.com/ursais/template template
-```
 
 ## UFW
 
