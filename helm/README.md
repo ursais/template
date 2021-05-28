@@ -1,4 +1,4 @@
-# Installation
+# Deployment
 
 ## Table of Contents
 * [Dependencies](#Dependencies)
@@ -9,7 +9,9 @@
 ## Dependencies
 
 ```shell
-apt install certbot nginx python3-certbot-nginx ufw
+apt install certbot git nginx python3-certbot-nginx ufw
+cd /opt
+git clone https://github.com/ursais/template template
 ```
 
 ## UFW
@@ -83,4 +85,13 @@ and run:
 systemctl daemon-reload
 systemctl enable template
 service template start
+```
+
+## Release
+
+Run:
+```shell
+cd /opt/template
+git pull
+service template restart
 ```
