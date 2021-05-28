@@ -4,6 +4,7 @@
 * [Prerequisites](#Prerequisites)
 * [Setup your environment](#Setup-your-environment)
 * [Tests](#Tests)
+* [Deploy](#Deploy)
 * [Issues](#Issues)
 * [Roadmap](#Roadmap)
 
