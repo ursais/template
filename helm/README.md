@@ -1,16 +1,9 @@
-# Installation
+# Operations
 
 ## Table of Contents
-* [Dependencies](#Dependencies)
 * [UFW](#UFW)
 * [Nginx](#Nginx)
 * [Systemd](#Systemd)
-
-## Dependencies
-
-```shell
-apt install certbot nginx python3-certbot-nginx ufw
-```
 
 ## UFW
 
@@ -83,4 +76,13 @@ and run:
 systemctl daemon-reload
 systemctl enable template
 service template start
+```
+
+## Release
+
+Run:
+```shell
+cd /opt/template
+git pull
+service template restart
 ```

@@ -2,34 +2,44 @@
 
 ## Table of Contents
 * [Prerequisites](#Prerequisites)
-* [Setup your environment](#Setup-your-environment)
-* [Tests](#Tests)
-* [Deploy](#Deploy)
-* [Issues](#Issues)
-* [Roadmap](#Roadmap)
+* [Development](#Development)
+  * [Build](#Build)
+  * [Run](#Run)
+  * [Test](#Test)
+* [Operations](#Operations)
+* [Support](#Support)
 
 ## Prerequisites
 
-## Setup your environment
+```shell
+apt install certbot git nginx python3-certbot-nginx ufw
+cd /opt
+git clone https://github.com/ursais/template template
+```
+
+## Development
+
+### Build
 
 ```shell
 docker-compose build
+```
+
+### Run
+
+```shell
 docker-compose up
 ```
 
-## Tests
+### Test
 
 * 
 
-## Deploy
+## Operations
 
 Take a look at [README.md](./helm/README.md)
 
-## Issues
+## Support
 
 Report any issue to this
 [Github project](https://github.com/ursais/template/issues).
-
-## Roadmap
-
-* 
