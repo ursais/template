@@ -4,6 +4,7 @@
 * [UFW](#UFW)
 * [Nginx](#Nginx)
 * [Systemd](#Systemd)
+* [Release](#Release)
 
 ## UFW
 
