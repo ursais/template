@@ -1,14 +1,21 @@
 # Operations
 
 ## Table of Contents
+* [Prerequisites](#Prerequisites)
 * [UFW](#UFW)
 * [Nginx](#Nginx)
 * [Systemd](#Systemd)
 * [Release](#Release)
 
-## UFW
+## Prerequisites
 
-Run
+```shell
+apt install certbot docker-compose git nginx python3-certbot-nginx ufw
+cd /opt
+git clone https://github.com/ursais/template template
+```
+
+## UFW
 
 ```shell
 ufw allow ssh
@@ -19,7 +26,7 @@ ufw enable
 
 ## Nginx
 
-* Create a Nginx config file in /etc/nginx/sites-available/template.example.com:
+* Create `/etc/nginx/sites-available/template.example.com` with:
 
 ```nginx
 upstream template {

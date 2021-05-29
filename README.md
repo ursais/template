@@ -1,23 +1,23 @@
 # Template Project
 
 ## Table of Contents
-* [Prerequisites](#Prerequisites)
 * [Development](#Development)
+  * [Prerequisites](#Prerequisites)
   * [Build](#Build)
   * [Run](#Run)
   * [Test](#Test)
 * [Operations](#Operations)
 * [Support](#Support)
 
-## Prerequisites
+## Development
+
+### Prerequisites
 
 ```shell
-apt install certbot git nginx python3-certbot-nginx ufw
+apt install docker-compose git
 cd /opt
 git clone https://github.com/ursais/template template
 ```
-
-## Development
 
 ### Build
 
