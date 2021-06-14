@@ -7,5 +7,5 @@
 
 2. Login with the following credentials:
 
-  Email: {{ .Values.odooUsername }}
-  echo Password: $(kubectl get secret --namespace {{ .Release.Namespace }} {{ template "app.fullname" . }} -o jsonpath="{.data.odoo-admin-user-password}" | base64 --decode)
+  Email: {{ .Values.username }}
+  echo Password: $(kubectl get secret --namespace {{ .Release.Namespace }} {{ template "app.fullname" . }} -o jsonpath="{.data.admin-password}" | base64 --decode)
