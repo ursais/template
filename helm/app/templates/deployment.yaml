@@ -38,7 +38,7 @@ spec:
         image: {{ .Values.image | quote }}
         env:
           - name: PGHOST
-            value: {{ ternary "odoo-postgresql" .Values.externalDatabase.host .Values.postgresql.enabled | quote }}
+            value: {{ ternary (include "app.postgresql.fullname" .) .Values.externalDatabase.host .Values.postgresql.enabled | quote }}
           - name: PGPORT
             value: {{ ternary "5432" .Values.externalDatabase.port .Values.postgresql.enabled | quote }}
           - name: PGUSER
