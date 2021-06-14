@@ -100,4 +100,3 @@ platform: aws, azure or do
 distribution: kubernetes or openshift
 application_domain: template.apps.cluster.example.com
 image: docker.pkg.github.com/ursais/template/template:latest
-
